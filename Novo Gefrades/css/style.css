@@ -1,0 +1,112 @@
+@charset "UTF-8";
+
+/*Plano de Fundo---------------------------------------------*/
+body {
+    background-repeat: no-repeat; /* não permite a repetição do plano de fundo*/
+    background-size: contain;/*posição do plano de fundo*/
+    background-color: #c4c5b7; /*plano de fundo do corpo do site*/
+}
+
+
+.cabeçalho{
+
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding:20px;
+}
+
+
+
+/* Estilo para o menu principal */
+#menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    position: relative;
+}
+
+/* Estilo para o ícone de hambúrguer */
+.menu-icon {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: white;
+}
+
+/* Estilo para os itens do menu */
+.nav {
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.nav li {
+    margin: 0 10px;
+}
+
+.nav a {
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+    display: block;
+}
+
+.submenu .dropdown {
+    display: none;
+    position: absolute;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.submenu:hover .dropdown {
+    display: block;
+}
+
+.dropdown li {
+    margin: 0;
+}
+
+/* Estilo para dispositivos móveis */
+@media (max-width: 768px) {
+    .menu-icon {
+        display: block;
+    }
+
+    .nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 50px;
+        left: 0;
+        z-index: 1000;
+    }
+
+    .nav.active {
+        display: flex;
+    }
+
+    .nav li {
+        margin: 5px 0;
+    }
+
+    .submenu .dropdown {
+        position: static;
+    }
+}
+
+/* Ajuste para evitar colisão das caixas */
+.container {
+    flex-direction: column;
+}
+
+.box {
+    width: 100%;
+    margin: 10px 0;
+}
+
+ 

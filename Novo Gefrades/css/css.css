@@ -1,0 +1,206 @@
+@charset "UTF-8";
+
+/*Plano de Fundo---------------------------------------------*/
+body {
+    background-repeat: no-repeat; /* não permite a repetição do plano de fundo*/
+    background-size: contain;/*posição do plano de fundo*/
+    background-color: #c4c5b7; /*plano de fundo do corpo do site*/
+}
+
+.conteiner{
+    display:flex;
+    flex-wrap: wrap;
+    
+
+}
+
+.imglogo{
+    box-shadow: #070707 0 12px 12px;/*colocando a borda no menu*/
+    position: relative;/*defininado a posição*/
+}
+
+.menu-icon{
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: green;
+}
+
+.item1{
+    display: flex;
+    flex-direction: row;
+    flex:auto
+}
+.item1{
+    padding: 0;
+    margin: 0;
+}
+
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+
+    
+}
+
+.nav {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: rowr;
+    list-style: none; /*retira os caracteres de marcação*/
+    padding: 0; /*retira o espaçamento interno*/
+    margin: 0 5px;
+}
+ 
+.nav li {
+    margin: 5px;
+}
+
+.nav a {
+    text-decoration: none;
+    background-color: darkgreen; /* plano de fundo da caixa de texto*/
+    padding: 6px; /* define o espaço interno na caixa de texto*/
+    margin: 0; /*define o espaço fora da caixa de texto*/
+    border-radius: 0 0 10px 10px; /*aredonda as bordas */
+    transition: background-color 1s; /*faz a transição em 1segundo */
+    box-shadow: #070707 0 12px 12px;/*colocando a borda no menu*/
+    position: relative;/*defininado a posição*/
+    color: white;
+    font-size: 14px;
+}
+
+.submenu .dropdown {
+    display: none;
+    position: absolute;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.submenu:hover .dropdown {
+    display: block;
+}
+
+.item3 {
+    display: flex;
+    flex-direction: column;
+    width: 81.5%;
+    position: absolute; /* Adicionado para posicionamento absoluto */
+    top: 50px; /* Ajuste conforme necessário para ficar logo abaixo do menu */
+    right: 0; /* Posiciona à direita da página */
+    flex: auto;
+}
+
+h1#log {
+    color: darkgreen;
+    font-size: 25px;
+    font-family: "Source Sans Pro", "Arial", sans-serif;
+    text-shadow: 2px 2px 15px white;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    padding-left: 5%;
+}
+
+.logo {
+    text-align: right;
+    text-shadow: 5px 5px 5px darkgreen;
+    border-bottom: 5px darkgreen solid;
+    margin-bottom: 20px;
+    padding-right: 40px;
+}
+
+.definição {
+    text-align: right;
+    color: black;
+    background: linear-gradient(to top, rgba(0, 128, 0, 0.7), transparent);
+    stop-color: rgba(0, 128, 0, 0.7);
+    padding: 15px;   
+    font-size: 14px;
+    font-family: Garamond, "Arial", sans-serif;
+    width: 90%;
+    list-style: 30px;
+    margin: 0 0 5px 0;
+}
+
+/* Media Queries para responsividade */
+@media (max-width: 1200px) {
+    .item3 {
+        width: 70%;
+        top: 60px;
+    }
+}
+
+@media (max-width: 992px) {
+    .item3 {
+        width: 80%;
+        top: 70px;
+    }
+}
+
+@media (max-width: 768px) {
+    
+    .item3 {
+        width: 100%;
+        top: 150px;
+        right: 0;
+    }
+
+        h1#log {
+        font-size: 16px;
+        
+    }
+    .definição {
+        font-size: 10px;
+    }
+
+        .imglogo {
+        display: block;
+        position: absolute; /* Adicionado para posicionamento absoluto */
+        top: 10px; /* Ajuste conforme necessário */
+        left: 50%; /* Centraliza horizontalmente */
+        transform: translateX(-50%); /* Ajusta para centralizar perfeitamente */
+    }
+
+        .menu-icon {
+        display: block;
+        position: absolute; /* Adicionado para posicionamento absoluto */
+        top: 10px; /* Ajuste conforme necessário */
+        right: 10px; /* Ajuste conforme necessário */
+    }
+
+    .nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 50px;
+        left: 0;
+        z-index: 1000;
+    }
+
+    .nav.active {
+        display: flex;
+    }
+
+    .nav li {
+        margin: 5px 0;
+    }
+
+    .submenu .dropdown {
+        position: static;
+    }
+}
+
+}
+/* Estilo para dispositivos móveis */
+@media (max-width: 768px) {
+
+/* Ajuste para evitar colisão das caixas */
+.container {
+    flex-direction: column;
+}
+
+.box {
+    width: 100%;
+    margin: 10px 0;
+}
